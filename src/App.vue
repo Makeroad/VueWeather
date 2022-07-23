@@ -6,10 +6,14 @@
           type="text" 
           class="search-bar" 
           placeholder="Search..."
-          v-model="query"
-          @keypress="fetchWeather"
+          v-model="query" 
+          @keypress="fetchWeather" 
         />
       </div>
+<!--keypressはEvnet Keyboardのkeyを押されたか値を取るfetchWeatherはscript側で処理する関数-->
+
+<!--V-ModelはData binding ScriptとDOMの間のデータのやり取り？フロント側でユーザーが入力した都市名をvueがbindingしてscriptに送るこれは入力だけではなく
+チェックボックスやラジオボタンでもbindingができる。https://jp.vuejs.org/v2/guide/forms.html-->
 
       <div class="weather-wrap" v-if="typeof weather.main != 'undefined'">
         <div class="location-box">
